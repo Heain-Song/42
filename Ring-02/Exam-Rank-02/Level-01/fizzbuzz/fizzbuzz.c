@@ -1,5 +1,17 @@
 #include <unistd.h>
 
+void *ft_putnbr(int nbr)
+{
+	if (nbr)
+
+}
+
+
+
+
+
+
+
 int main (void)
 {
 	int i;
@@ -27,10 +39,14 @@ int main (void)
 /* Q1. How can I make the program write the number from 1 to 100 with the write function?
 	Error note: expected ‘const void *’ but argument is of type ‘int’
 
-	Below is the proto type of write function in C.
+	Below is the proto type of write function in C:
+	ssize_t write(int fd, const void *buf, size_t count);
+	- write() writes up to count bytes from the buffer starting at buf to the file referred to by the file descriptor fd.
 
-  	extern ssize_t write (int __fd, const void *__buf, size_t __n) __wur;
+	Q1.1 It seems like I put 'int' instead of 'const void *'.
+	->
 
-	It seems like I put 'int' instead of 'const void *'. What is const void *?
-
+	A1.
+	- use ASCII
+	- how about ft_putnbr? recursive call!
 */
