@@ -37,11 +37,3 @@ int main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
-
-/* Issue & What I learned
-	[Solved] Q1. Why it returns "\n" when the input is "abc"?
-	I wrote "while (j == 0)" instead of "while(j != 0)". 
-
-	[Solved] Q2. Where should j be initialized?
-	It doesn't matter much here as j will be overwrote by the right-value everytime before use.
-*/

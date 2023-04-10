@@ -7,9 +7,6 @@ int main(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 	{
-	/*A = 65, M = 77, N = 78, Z = 90
-		a = 97, m = 109, n = 110, z = 122
-	*/
 		while (argv[1][i] != '\0')
 		{
 			if ((argv[1][i] >= 65 && argv[1][i] <= 77) ||

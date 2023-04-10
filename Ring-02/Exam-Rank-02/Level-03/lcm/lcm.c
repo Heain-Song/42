@@ -24,3 +24,12 @@ unsigned int    lcm(unsigned int a, unsigned int b)
 	}
 	return (result);
 }
+
+
+int main(void)
+{
+	int a = 0;
+	int b = 2;
+	printf("%d\n", lcm(a,b));
+	return (0);
+}
