@@ -1,29 +1,32 @@
 #include <unistd.h>
+#include <stdio.h>
+
+int	is_space(char c)
+{
+	if (c == ' ' || c == '\t')
+		return (1);
+	else
+		return (0);
+}
 
 int main(int argc, char **argv)
 {
 	if (argc == 2 && argv[1] != NULL)
 	{
 		int i = 0;
+		int flag = 0;
 		char *str = argv[1];
-
-		while (str[i] == ' ' || str[i] == '\t')
+		
+		while (is_space(str[i]))
 			i++;
-		int t = first_alphabet;
+		flag = i;
 		while (str[i] != '\0')
 		{
-			if (i == first_alphabet)
-				write(1, &str[i], 1);
-			else if (str[i] != ' ' && str[i] != '\t')
+			if (!is_space(str[i]))
 			{
-				
-				if (str[i - 1] == ' ' || str[i - 1] == '\t')
-				{
+				if ((i - 1) > flag && is_space(str[i - 1]))
 					write(1, " ", 1);
-					write(1, &str[i], 1);
-				}
-				else
-					write(1, &str[i], 1);
+				write(1, &str[i], 1);
 			}
 			i++;
 		}
