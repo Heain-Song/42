@@ -11,29 +11,36 @@ int ft_strlen(char *str)
 
 int main(int argc, char **argv)
 {
-	if (argc == 3)
+	int i = 0;
+	int j = 0;
+	int count = 0;
+	int start = 0;
+	int flag = 0;
+
+	char *s1 = argv[1];
+	char *s2 = argv[2];
+
+	while (s1[i] != '\0')
 	{
-		int i = 0;
-		int j = 0;
-
-		char *s1 = argv[1];
-		char *s2 = argv[2];
-
-		int len = ft_strlen(s1);
-
-		while (s1[i] != '\0')
+		j = start;
+		while(s2[j] != '\0')
 		{
-			j = 0;
-			while(s2[j] != '\0')
+			if (s1[i] == s2[j])
 			{
-				//match found? save the position and check the length
-				if (s1[i] == s2[j])
-				{
-
-						
-				}
-
+				count++;
+				start = j;
+				break;
 			}
+			j++;
+		}
+		i++;
+	}
+	if (count == ft_strlen(s1))
+	{
+		i = 0;
+		while(s1[i] != '\0')
+		{
+			write(1, &s1[i], 1);
 			i++;
 		}
 	}
