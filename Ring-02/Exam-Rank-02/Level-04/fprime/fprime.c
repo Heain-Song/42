@@ -5,16 +5,21 @@ int is_prime(int nbr)
 {
 	if (nbr <= 1)
 		return (0);
-	int i = 2;
+	if (nbr == 2)
+		return (1);
+	else if ((nbr % 2) == 0)
+		return (0);
+
+	int i = 3;
 	while(i < nbr)
 	{
 		if (nbr % i == 0)
 			return (0);
-		i++;
+		i += 2;
 	}
 	return (1);
-
 }
+
 int main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -23,7 +28,8 @@ int main(int argc, char **argv)
 
 		if (nbr == 1)
 			printf("1");
-		
+		if (is_prime(nbr))
+			printf("%d", nbr);
 		else
 		{
 			int i = 2;
@@ -31,6 +37,7 @@ int main(int argc, char **argv)
 			{
 				if (is_prime(i) == 1)
 				{
+				//	printf("i: %d\t, nbr: %d\t, nbr %% i = %d\n",i, nbr, (nbr % i));
 					if (nbr % i == 0)
 					{
 						printf("%d", i);
@@ -38,6 +45,7 @@ int main(int argc, char **argv)
 						if (nbr != 1)
 							printf("*");
 						i = 2;
+						continue;
 					}
 				}
 				i++;
